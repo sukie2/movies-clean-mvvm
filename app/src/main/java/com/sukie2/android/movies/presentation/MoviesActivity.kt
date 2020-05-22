@@ -8,7 +8,6 @@ class MoviesActivity : AppCompatActivity(R.layout.activity_movies) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val fragmentTransaction = supportFragmentManager.beginTransaction()
         val fragment = MoviesFragment()
         fragmentTransaction.add(R.id.fragment_container, fragment)
