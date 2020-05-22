@@ -43,7 +43,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-
     // architecture components
     implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycleVersion"
@@ -61,6 +60,11 @@ dependencies {
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutinesVersion"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutinesVersion"
     testImplementation 'com.natpryce:snodge:3.7.0.0'
+
+    // networking
+    api "com.squareup.retrofit2:retrofit:$versions.retrofitVersion"
+    api "com.squareup.okhttp3:logging-interceptor:$versions.okhttpVersion"
+    api "com.squareup.retrofit2:converter-gson:$versions.retrofitVersion"
 
     // debugging
     implementation "com.jakewharton.timber:timber:$versions.timberVersion"
