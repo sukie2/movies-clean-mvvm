@@ -1,9 +1,10 @@
 package com.sukie2.android.movies.framework
 
 import android.app.Application
-import com.sukie2.android.movies.di.networkModule
-import com.sukie2.android.movies.di.repositoryModule
-import com.sukie2.android.movies.di.viewModelModule
+import com.sukie2.android.movies.framework.di.networkModule
+import com.sukie2.android.movies.framework.di.repositoryModule
+import com.sukie2.android.movies.framework.di.useCaseModule
+import com.sukie2.android.movies.framework.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -15,7 +16,7 @@ class MoviesApplication : Application() {
             // declare used Android context
             androidContext(this@MoviesApplication)
             // declare modules
-            modules(networkModule, repositoryModule, viewModelModule)
+            modules(networkModule, repositoryModule, viewModelModule, useCaseModule)
         }
     }
 }

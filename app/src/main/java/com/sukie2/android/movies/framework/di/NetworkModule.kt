@@ -1,4 +1,4 @@
-package com.sukie2.android.movies.di
+package com.sukie2.android.movies.framework.di
 
 import com.sukie2.android.movies.framework.networking.EndPoint
 import com.sukie2.android.movies.framework.networking.MovieAPI
