@@ -4,10 +4,10 @@ data class MovieResponse (
     val page : Int,
     val total_results : Int,
     val total_pages : Int,
-    val results : List<MovieResults>
+    val results : List<Movie>
 )
 
-data class MovieResults (
+data class Movie (
     val popularity : Double,
     val vote_count : Int,
     val video : Boolean,
@@ -19,7 +19,7 @@ data class MovieResults (
     val original_title : String,
     val genre_ids : List<Int>,
     val title : String,
-    val vote_average : Int,
+    val vote_average : Double,
     val overview : String,
     val release_date : String
 )

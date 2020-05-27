@@ -9,7 +9,7 @@ import retrofit2.Response
 
 class MoviesRepository (val movieAPI: MovieAPI){
 
-    suspend fun fetchPopularMovies(onResult: (APIResult<Any?>) -> Unit) {
+    fun fetchPopularMovies(onResult: (APIResult<Any?>) -> Unit) {
         this.movieAPI.fetchPopularMovies(page = 1).enqueue(object : Callback<MovieResponse> {
 
             override fun onFailure(call: Call<MovieResponse>, t: Throwable) {

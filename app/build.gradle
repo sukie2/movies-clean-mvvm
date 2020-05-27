@@ -1,9 +1,6 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply from: 'versions.gradle'
 
 def Properties properties = new Properties()
@@ -30,7 +27,9 @@ android {
     repositories {
         jcenter()
     }
-
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
