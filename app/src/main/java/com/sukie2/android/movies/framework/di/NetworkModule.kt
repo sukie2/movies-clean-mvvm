@@ -24,7 +24,7 @@ val networkModule = module {
     single {
         Retrofit.Builder()
             .client(get<OkHttpClient>())
-            .baseUrl(EndPoint.TheMovieDB)
+            .baseUrl(EndPoint.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

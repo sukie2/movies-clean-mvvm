@@ -8,15 +8,16 @@ import com.sukie2.android.movies.usecases.MovieUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
+import timber.log.Timber
 
 
 class MoviesViewModel(val movieUseCase: MovieUseCase) : ViewModel(), KoinComponent {
 
-    private var _movieLiveData: LiveData<List<Movie>> = MutableLiveData()
-    val movieLiveData: LiveData<List<Movie>>
-        get() = _movieLiveData
+    init{
+        Timber.d("MoviesViewModel injection")
+    }
 
-    val movies: MutableLiveData<List<Movie>> by lazy {
+    val moviesLiveData: MutableLiveData<List<Movie>> by lazy {
         MutableLiveData<List<Movie>>()
     }
 
@@ -25,10 +26,10 @@ class MoviesViewModel(val movieUseCase: MovieUseCase) : ViewModel(), KoinCompone
             movieUseCase.fetchPopularMovies {
                 when (it) {
                     is APIResult.Success -> {
-                        movies.value = (it.responseData as MovieResponse).results
+                        moviesLiveData.value = (it.responseData as MovieResponse).results
                     }
                     is APIResult.Failure -> {
-
+                    val x = 0
                     }
                 }
             }
