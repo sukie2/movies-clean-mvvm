@@ -13,12 +13,16 @@ import timber.log.Timber
 
 class MoviesViewModel(val movieUseCase: MovieUseCase) : ViewModel(), KoinComponent {
 
-    init{
+    init {
         Timber.d("MoviesViewModel injection")
     }
 
     val moviesLiveData: MutableLiveData<List<Movie>> by lazy {
         MutableLiveData<List<Movie>>()
+    }
+
+    val errorLiveData: MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
     }
 
     fun fetchPopularMovies() {
@@ -29,7 +33,7 @@ class MoviesViewModel(val movieUseCase: MovieUseCase) : ViewModel(), KoinCompone
                         moviesLiveData.value = (it.responseData as MovieResponse).results
                     }
                     is APIResult.Failure -> {
-                    val x = 0
+                        errorLiveData.value = it.toString()
                     }
                 }
             }
