@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide
 import com.sukie2.android.movies.R
 import com.sukie2.android.movies.domain.Movie
 import com.sukie2.android.movies.framework.networking.EndPoint.BASE_POSTER_PATH
-import kotlinx.android.synthetic.main.movie_list_cell.view.*
 
 class MoviesAdapter(private val movies: List<Movie>) :
     RecyclerView.Adapter<MoviesAdapter.MyViewHolder>() {
